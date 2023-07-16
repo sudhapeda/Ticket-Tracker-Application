@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+        .ticket-details {
+            margin-bottom: 20px;
+        }
+        .btn-action {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 mb-4">Ticket Details</h1>
+        <div class="ticket-details">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" class="form-control" value="${ticket.title}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" class="form-control" readonly>${ticket.description}</textarea>
+            </div>
+            <a href="/tickets/edit/{id}(id=${ticket.id})" class="btn btn-info btn-action">Edit</a>
+            <a href="/tickets/delete/{id}(id=${ticket.id})" class="btn btn-danger btn-action">Delete</a>
+        </div>
+    </div>
+</body>
+</html>
